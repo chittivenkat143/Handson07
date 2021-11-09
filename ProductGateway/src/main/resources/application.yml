@@ -1,0 +1,19 @@
+server:
+  port: 8083
+
+management:
+  endpoints:
+    web:
+      exposure:        include: "*" 
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: product_service
+        uri: http://localhost:8099/
+        predicates:
+        - Path=/product/**          
+          application:    name: Product-Gateway
+    
+    

@@ -1,0 +1,4 @@
+spring:  application:    name: Product-Client
+
+server:
+  port: 8099  eureka:  instance:    hostname: localhost    lease-renewal-interval-in-seconds: 10    lease-expiration-duration-in-seconds: 20    prefer-ip-address: true  client:    service-url:      defaultZone: http://localhost:8761/eureka    healthcheck:      enabled: false  feign:  client:    config:      default:        connectTimeout: 5000        readTimeout: 5000        loggerLevel: basic
